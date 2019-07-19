@@ -1,18 +1,20 @@
 # Open call for contributions by Truffle + PegaSys: EEA private transactions
 
+Header Image options:
+
 ## What's missing?
 
 In its current state, Truffle doesn't support EEA private transactions. Support for the web3js-eea library is needed for this to work and PegaSys has recently made an implementation of the v4.0 EEA specification.
 
 ## Why did this happen?
 
-At PegaSys, we don't take client Specs lightly- in fact, we contribute heavily to make sure future specs are well defined and linded up correctly with our software. There are several people at PegaSys who spend a lot of their time and activiely work on spec definition.
+At PegaSys, we don't take client Specs lightly- in fact, we contribute heavily to make sure future specs are well defined and lined up correctly with our software. There are several people at PegaSys who spend a lot of their time and actively work on spec definition.
 
 As part of the upcoming EEA 4.0 client spec, private transactions have slightly changed the way the get implemented. Therefore, we now find that the `truffle-interface-adapter` that implemented the old spec isn't up to date.
 
 EEA client specification is a developing specification. Truffle has not yet implemented the EEA client specification around private transactions. With PegaSys providing an implementation of the specification, they are teaming with truffle to ensure that truffle supports the EEA JSON rpcs.
 
-As part of the upcoming EEA 4.0 client spec, the new private transactions impementation made by PegaSys can be integrated into the `truffle-interface-adapter`.
+As part of the upcoming EEA 4.0 client spec, the new private transactions implementation made by PegaSys can be integrated into the `truffle-interface-adapter`.
 
 ## What's the solution?
 PegaSys and Truffle have teamed up to make a single open call for contributions. This guest blog post is made by the PegaSys team and is to be posted on the Truffle blog and promoted by both teams in order to add code to Truffle codebase to add support for them.
@@ -26,7 +28,6 @@ In short, when truffle receives a transaction, it should determine if its a `pri
 
 ## What to do Exactly?
 
-Want more details?
 The initial process involves adding an EEA definition to the shim file. The `web3-shim.ts` file currently contains the overloads for the different interface definitions and their mappings.
 
 ```
@@ -68,7 +69,7 @@ const initInterface = async(web3Shim: Web3Shim) => {
 ```
 
 
-The [rest of the owl](https://i.imgur.com/4fVoQoQ.png) is to add the needed logic in the `eea-overloads.ts` file and the `overrides` variable for it to interract with the [web3eeajs library](https://www.npmjs.com/package/web3-eea).
+The [rest of the owl](https://i.imgur.com/4fVoQoQ.png) is to add the needed logic in the `eea-overloads.ts` file and the `overrides` variable for it to interact with the [web3eeajs library](https://www.npmjs.com/package/web3-eea).
 
 ![PegaSys owl](https://i.imgur.com/4fVoQoQ.png)
 
@@ -84,7 +85,7 @@ So knowing some javascript is a must.
 It will definitely help if you've had some exposure and usage of the truffle library. Nothing fancy, just using it for compiling and deploying contracts for example.
 Likewise, having some previous knowledge of the web3js library is going to prove quite helpful.
 
-All of the above somewhat discribes a general dapp developer- so in other words; if you've already written a dapp before using truffle, this contribution could be done by you.
+All of the above somewhat describes a general dapp developer- so in other words; if you've already written a dapp before using truffle, this contribution could be done by you.
 
 So what's in it for you?
 Two things:
