@@ -1,6 +1,6 @@
 # Open call for contributions by Truffle + PegaSys: EEA private transactions
+![Pegasys Truffle Open Call For Contributions](https://i.imgur.com/GLw8iok.jpg)
 
-Header Image options:
 
 ## What's missing?
 
@@ -8,13 +8,9 @@ In its current state, Truffle doesn't support EEA private transactions. Support 
 
 ## Why did this happen?
 
+The `interface-adapter` in Truffle’s codebase doesn’t provide an adapter for the  EEA 4.0 client spec, therefore private transactions aren’t working.
+
 At PegaSys, we don't take client Specs lightly- in fact, we contribute heavily to make sure future specs are well defined and lined up correctly with our software. There are several people at PegaSys who spend a lot of their time and actively work on spec definition.
-
-As part of the upcoming EEA 4.0 client spec, private transactions have slightly changed the way the get implemented. Therefore, we now find that the `truffle-interface-adapter` that implemented the old spec isn't up to date.
-
-EEA client specification is a developing specification. Truffle has not yet implemented the EEA client specification around private transactions. With PegaSys providing an implementation of the specification, they are teaming with truffle to ensure that truffle supports the EEA JSON rpcs.
-
-As part of the upcoming EEA 4.0 client spec, the new private transactions implementation made by PegaSys can be integrated into the `truffle-interface-adapter`.
 
 ## What's the solution?
 PegaSys and Truffle have teamed up to make a single open call for contributions. This guest blog post is made by the PegaSys team and is to be posted on the Truffle blog and promoted by both teams in order to add code to Truffle codebase to add support for them.
@@ -25,6 +21,8 @@ The location of the files to be modified can be found here:
 [truffle/packages/truffle-interface-adapter/lib](https://github.com/trufflesuite/truffle/tree/develop/packages/truffle-interface-adapter/lib)
 
 In short, when truffle receives a transaction, it should determine if its a `privateFor` transaction. If so, it would delegate the rest of the business logic to the EEA library. If not, it should just continue processing the transaction with the original web3 methods.
+
+Also, it would be very useful to make sure this plays nicely with the getTransactionReceipt methods later in the chain of events.
 
 ## What to do Exactly?
 
@@ -89,8 +87,8 @@ All of the above somewhat describes a general dapp developer- so in other words;
 
 So what's in it for you?
 Two things:
-- You'll receive some PegaSys Swag. 😎
-- I'll personally thank and credit you on stage at [Trufflecon at my Permissioning  Talk](https://twitter.com/trufflesuite/status/1150929297647034374)
+- You'll receive some 😎 PegaSys Swag!
+- We'll personally thank and credit you on stage at [Trufflecon at my Permissioning  Talk](https://twitter.com/trufflesuite/status/1150929297647034374)
 
 
 For more information or help on this contribution, contact [Felipe](mailto:felipe.faraggi@consensys.net) from [PegaSys](http://pegasys.tech),  or write us on [our gitter channel](https://gitter.im/PegaSysEng/pantheon).
