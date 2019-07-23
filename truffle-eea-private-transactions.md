@@ -75,7 +75,7 @@ The [rest of the owl](https://i.imgur.com/4fVoQoQ.png) is to add the needed logi
 ## Who can do this?
 
 Anyone who'd like to try can very much do so we will gladly support any developer who wants to help out.
-But here are some recommended pre-requisites:
+But here are some recommended prerequisites:
 
 The Truffle codebase is mainly written in `javascript`, and this particular interface-adapter library we'll be looking at is written in `typescript`.
 So knowing some javascript is a must.
