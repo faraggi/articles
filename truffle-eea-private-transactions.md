@@ -10,7 +10,7 @@ In its current state, Truffle doesn't support EEA private transactions. Support 
 
 The `interface-adapter` in Truffle’s codebase doesn’t provide an adapter for the  EEA 4.0 client spec, therefore private transactions aren’t working.
 
-At PegaSys, we don't take client Specs lightly- in fact, we contribute heavily to make sure future specs are well defined and lined up correctly with our software. There are several people at PegaSys who spend a lot of their time and actively work on spec definition.
+The EEA client specification is a developing specification and  Truffle has not yet implemented the EEA client specification around private transactions.  PegaSys is providing an implementation of the specification for private transactions.  Pegasys and Truffle are teaming up to ensure that Truffle supports the EEA JSON RPC API methods.
 
 ## What's the solution?
 PegaSys and Truffle have teamed up to make a single open call for contributions. This guest blog post is made by the PegaSys team and is to be posted on the Truffle blog and promoted by both teams in order to add code to Truffle codebase to add support for them.
@@ -20,7 +20,7 @@ The solution involves using a Delegation pattern to help make that work.
 The location of the files to be modified can be found here:
 [truffle/packages/truffle-interface-adapter/lib](https://github.com/trufflesuite/truffle/tree/develop/packages/truffle-interface-adapter/lib)
 
-In short, when truffle receives a transaction, it should determine if its a `privateFor` transaction. If so, it would delegate the rest of the business logic to the EEA library. If not, it should just continue processing the transaction with the original web3 methods.
+In short, when Truffle receives a transaction, it should determine if its a `privateFor` transaction. If so, it would delegate the rest of the business logic to the EEA library. If not, it should just continue processing the transaction with the original web3 methods.
 
 Also, it would be very useful to make sure this plays nicely with the getTransactionReceipt methods later in the chain of events.
 
@@ -75,15 +75,15 @@ The [rest of the owl](https://i.imgur.com/4fVoQoQ.png) is to add the needed logi
 ## Who can do this?
 
 Anyone who'd like to try can very much do so we will gladly support any developer who wants to help out.
-But here are some recommended knowledge areas to have:
+But here are some recommended pre-requisites:
 
-The truffle codebase is mainly written in `javascript`, and this particular interface-adapter library we'll be looking at is written in `typescript`.
+The Truffle codebase is mainly written in `javascript`, and this particular interface-adapter library we'll be looking at is written in `typescript`.
 So knowing some javascript is a must.
 
-It will definitely help if you've had some exposure and usage of the truffle library. Nothing fancy, just using it for compiling and deploying contracts for example.
+It will definitely help if you've had some exposure and usage of the Truffle library. Nothing fancy, just using it for compiling and deploying contracts for example.
 Likewise, having some previous knowledge of the web3js library is going to prove quite helpful.
 
-All of the above somewhat describes a general dapp developer- so in other words; if you've already written a dapp before using truffle, this contribution could be done by you.
+All of the above somewhat describes a general dapp developer- so in other words; if you've already written a dapp before using Truffle, this contribution could be done by you.
 
 So what's in it for you?
 Two things:
