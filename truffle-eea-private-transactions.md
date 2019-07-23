@@ -28,7 +28,7 @@ Also, it would be very useful to make sure this plays nicely with the getTransac
 
 The initial process involves adding an EEA definition to the shim file. The `web3-shim.ts` file currently contains the overloads for the different interface definitions and their mappings.
 
-```
+``` typescript
 import { EthereumDefinition } from "./ethereum-overloads";
 import { QuorumDefinition } from "./quorum-overloads";
 import { FabricEvmDefinition } from "./fabric-evm-overloads";
@@ -47,7 +47,7 @@ const initInterface = async(web3Shim: Web3Shim) => {
 
 The initial import and mapping has been done [in this fork](https://github.com/faraggi/truffle).
 
-```
+``` typescript
 import { EthereumDefinition } from "./ethereum-overloads";
 import { EEADefinition } from "./EEA-overloads";
 import { QuorumDefinition } from "./quorum-overloads";
